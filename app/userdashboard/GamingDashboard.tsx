@@ -9,7 +9,7 @@ import BadgesSection from './BadgesSection';
 import { GameData, GameHistoryItem, UserData } from '../types/types';
 import '../globals.css';
 
-export default function Page() {
+const GamingDashboard: React.FC = () => {
   // Game data
   const [gameData, setGameData] = useState<GameData>({
     flood: { name: 'Flood Fighter', highScore: 8750, icon: '🌊' },
@@ -41,6 +41,19 @@ export default function Page() {
     alert(`Starting ${game.name}! Good luck!`);
   };
 
+  // Add game to history
+  const addGameToHistory = (gameName: string, score: number, isHighScore: boolean) => {
+    const today = new Date().toISOString().split('T')[0];
+    const newGame: GameHistoryItem = {
+      name: gameName,
+      score,
+      date: today,
+      isHighScore
+    };
+    
+    setGameHistory(prev => [newGame, ...prev]);
+  };
+
   // Animation effect on mount
   useEffect(() => {
     const cards = document.querySelectorAll('.card');
@@ -65,5 +78,6 @@ export default function Page() {
       <BadgesSection />
     </div>
   );
-}
-  
+};
+
+export default GamingDashboard;
