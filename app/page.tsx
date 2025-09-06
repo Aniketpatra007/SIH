@@ -1,5 +1,7 @@
-import GamingDashboard from './userdashboard/GamingDashboard'
+import Image from "next/image";
 
 export default function Home() {
-  return <GamingDashboard />
+  return (
+    <h1>home</h1>
+  );
 }
