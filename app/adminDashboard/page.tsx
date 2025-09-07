@@ -1,7 +1,15 @@
-import React from 'react'
+'use client';
 
-export const page = () => {
+import React from 'react';
+
+const AdminDashboardPage = () => {
   return (
-    <div>admin dashboard</div>
-  )
-}
+    <div>
+      <h1>Admin Dashboard</h1>
+      {/* Add your dashboard UI here */}
+    </div>
+  );
+};
+
+export default AdminDashboardPage;
+
