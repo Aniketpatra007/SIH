@@ -11,7 +11,8 @@ import '../globals.css';
 
 export default function Page() {
   // Game data
-  const [gameData, setGameData] = useState<GameData>({
+  // setGameData is not used
+  const [gameData] = useState<GameData>({
     flood: { name: 'Flood Fighter', highScore: 8750, icon: '🌊' },
     earthquake: { name: 'Earth Quick', highScore: 6420, icon: '🌍' },
     fire: { name: 'Fire Escape', highScore: 12300, icon: '🔥' }
@@ -26,7 +27,8 @@ export default function Page() {
   };
 
   // Game history state
-  const [gameHistory, setGameHistory] = useState<GameHistoryItem[]>([
+  // setGameHistory is not used
+  const [gameHistory] = useState<GameHistoryItem[]>([
     { name: 'Flood Fighter', score: 8750, date: '2025-09-04', isHighScore: true },
     { name: 'Earth Quick', score: 6420, date: '2025-09-03', isHighScore: false },
     { name: 'Fire Escape', score: 12300, date: '2025-09-02', isHighScore: true },
