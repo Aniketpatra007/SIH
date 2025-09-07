@@ -12,6 +12,7 @@ import '../globals.css';
 const GamingDashboard: React.FC = () => {
   // Game data
   //setGameData is not used
+  //use it if you plan to update game data dynamically
   const [gameData] = useState<GameData>({
     flood: { name: 'Flood Fighter', highScore: 8750, icon: '🌊' },
     earthquake: { name: 'Earth Quick', highScore: 6420, icon: '🌍' },
@@ -28,6 +29,7 @@ const GamingDashboard: React.FC = () => {
 
   // Game history state
   // setGameHistory is never used
+  // use it if you plan to update game history dynamically
   const [gameHistory] = useState<GameHistoryItem[]>([
     { name: 'Flood Fighter', score: 8750, date: '2025-09-04', isHighScore: true },
     { name: 'Earth Quick', score: 6420, date: '2025-09-03', isHighScore: false },
@@ -42,7 +44,7 @@ const GamingDashboard: React.FC = () => {
     const game = gameData[gameType];
     alert(`Starting ${game.name}! Good luck!`);
   };
-
+  //use this function to add a new game entry to history
   // Add game to history
   // const addGameToHistory = (gameName: string, score: number, isHighScore: boolean) => {
   //   const today = new Date().toISOString().split('T')[0];
