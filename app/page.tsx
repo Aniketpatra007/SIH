@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import { Shield, Users, BookOpen, AlertTriangle, MapPin, Trophy, Eye, MessageSquare } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export default function LandingPage() {
   const features = [
@@ -351,6 +352,15 @@ export default function LandingPage() {
   const footerTextStyle = {
     color: '#a7a9be'
   };
+  const router = useRouter();
+  
+  const handleSignUp = () => {
+    router.push('/signup');
+  };
+  
+  const handleLogin = () => {
+    router.push('/login');
+  };
 
   return (
     <div style={containerStyle}>
@@ -368,6 +378,7 @@ export default function LandingPage() {
               style={signInButtonStyle}
               onMouseOver={(e) => e.currentTarget.style.opacity = '0.8'}
               onMouseOut={(e) => e.currentTarget.style.opacity = '1'}
+              onClick={handleLogin}
             >
               Sign In
             </button>
@@ -375,6 +386,7 @@ export default function LandingPage() {
               style={signUpButtonStyle}
               onMouseOver={(e) => e.currentTarget.style.opacity = '0.8'}
               onMouseOut={(e) => e.currentTarget.style.opacity = '1'}
+              onClick={handleSignUp}
             >
               Sign Up
             </button>
