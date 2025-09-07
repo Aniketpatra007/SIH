@@ -11,6 +11,7 @@ import '../globals.css';
 
 const GamingDashboard: React.FC = () => {
   // Game data
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [gameData, setGameData] = useState<GameData>({
     flood: { name: 'Flood Fighter', highScore: 8750, icon: '🌊' },
     earthquake: { name: 'Earth Quick', highScore: 6420, icon: '🌍' },
@@ -26,6 +27,7 @@ const GamingDashboard: React.FC = () => {
   };
 
   // Game history state
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [gameHistory, setGameHistory] = useState<GameHistoryItem[]>([
     { name: 'Flood Fighter', score: 8750, date: '2025-09-04', isHighScore: true },
     { name: 'Earth Quick', score: 6420, date: '2025-09-03', isHighScore: false },

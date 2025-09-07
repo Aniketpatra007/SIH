@@ -430,7 +430,7 @@ export default function LandingPage() {
       <section style={problemSectionStyle}>
         <div style={problemContainerStyle}>
           <h2 style={sectionTitleStyle}>
-            The Challenge We're Solving
+            The Challenge We&apos;re Solving
           </h2>
           <p style={sectionTextStyle}>
             Traditional disaster preparedness training relies on infrequent manual drills and generic guidelines. 
