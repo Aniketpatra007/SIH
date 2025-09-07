@@ -11,8 +11,9 @@ import '../globals.css';
 
 const GamingDashboard: React.FC = () => {
   // Game data
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [gameData, setGameData] = useState<GameData>({
+  //setGameData is not used
+  //use it if you plan to update game data dynamically
+  const [gameData] = useState<GameData>({
     flood: { name: 'Flood Fighter', highScore: 8750, icon: '🌊' },
     earthquake: { name: 'Earth Quick', highScore: 6420, icon: '🌍' },
     fire: { name: 'Fire Escape', highScore: 12300, icon: '🔥' }
@@ -27,8 +28,9 @@ const GamingDashboard: React.FC = () => {
   };
 
   // Game history state
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [gameHistory, setGameHistory] = useState<GameHistoryItem[]>([
+  // setGameHistory is never used
+  // use it if you plan to update game history dynamically
+  const [gameHistory] = useState<GameHistoryItem[]>([
     { name: 'Flood Fighter', score: 8750, date: '2025-09-04', isHighScore: true },
     { name: 'Earth Quick', score: 6420, date: '2025-09-03', isHighScore: false },
     { name: 'Fire Escape', score: 12300, date: '2025-09-02', isHighScore: true },
@@ -42,19 +44,19 @@ const GamingDashboard: React.FC = () => {
     const game = gameData[gameType];
     alert(`Starting ${game.name}! Good luck!`);
   };
-
+  //use this function to add a new game entry to history
   // Add game to history
-  const addGameToHistory = (gameName: string, score: number, isHighScore: boolean) => {
-    const today = new Date().toISOString().split('T')[0];
-    const newGame: GameHistoryItem = {
-      name: gameName,
-      score,
-      date: today,
-      isHighScore
-    };
+  // const addGameToHistory = (gameName: string, score: number, isHighScore: boolean) => {
+  //   const today = new Date().toISOString().split('T')[0];
+  //   const newGame: GameHistoryItem = {
+  //     name: gameName,
+  //     score,
+  //     date: today,
+  //     isHighScore
+  //   };
     
-    setGameHistory(prev => [newGame, ...prev]);
-  };
+  //   setGameHistory(prev => [newGame, ...prev]);
+  // };
 
   // Animation effect on mount
   useEffect(() => {
