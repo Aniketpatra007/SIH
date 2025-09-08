@@ -9,10 +9,10 @@ import BadgesSection from './BadgesSection';
 import { GameData, GameHistoryItem, UserData } from '../types/types';
 import '../globals.css';
 
-export default function Page() {
+const GamingDashboard: React.FC = () => {
   // Game data
-  // setGameData is not used
-  // use it if you plan to update game data dynamically
+  //setGameData is not used
+  //use it if you plan to update game data dynamically
   const [gameData] = useState<GameData>({
     flood: { name: 'Flood Fighter', highScore: 8750, icon: '🌊' },
     earthquake: { name: 'Earth Quick', highScore: 6420, icon: '🌍' },
@@ -28,7 +28,7 @@ export default function Page() {
   };
 
   // Game history state
-  // setGameHistory is not used
+  // setGameHistory is never used
   // use it if you plan to update game history dynamically
   const [gameHistory] = useState<GameHistoryItem[]>([
     { name: 'Flood Fighter', score: 8750, date: '2025-09-04', isHighScore: true },
@@ -44,6 +44,19 @@ export default function Page() {
     const game = gameData[gameType];
     alert(`Starting ${game.name}! Good luck!`);
   };
+  //use this function to add a new game entry to history
+  // Add game to history
+  // const addGameToHistory = (gameName: string, score: number, isHighScore: boolean) => {
+  //   const today = new Date().toISOString().split('T')[0];
+  //   const newGame: GameHistoryItem = {
+  //     name: gameName,
+  //     score,
+  //     date: today,
+  //     isHighScore
+  //   };
+    
+  //   setGameHistory(prev => [newGame, ...prev]);
+  // };
 
   // Animation effect on mount
   useEffect(() => {
@@ -69,5 +82,6 @@ export default function Page() {
       <BadgesSection />
     </div>
   );
-}
-  
+};
+
+export default GamingDashboard;
