@@ -1,0 +1,19 @@
+{
+  "rewrites": [{ "source": "/unity/(.*)", "destination": "/unity/$1" }],
+  "headers": [
+    {
+      "source": "/unity/(.*)\\.wasm",
+      "headers": [{ "key": "Content-Type", "value": "application/wasm" }]
+    },
+    {
+      "source": "/unity/(.*)\\.data",
+      "headers": [
+        { "key": "Content-Type", "value": "application/octet-stream" }
+      ]
+    },
+    {
+      "source": "/unity/(.*)\\.js",
+      "headers": [{ "key": "Content-Type", "value": "application/javascript" }]
+    }
+  ]
+}
