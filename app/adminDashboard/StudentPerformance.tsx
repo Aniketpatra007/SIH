@@ -2,7 +2,7 @@
 'use client';
 
 import React from 'react';
-import { Student, FilterRegion } from 'app/adminDashboard/types';
+import { Student, FilterRegion } from './types';
 
 interface StudentPerformanceProps {
   activeFilter: string;

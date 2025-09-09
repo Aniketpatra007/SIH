@@ -2,7 +2,7 @@
 'use client';
 
 import React from 'react';
-import { LeaderboardItem } from 'app/adminDashboard/types';
+import { LeaderboardItem } from './types';
 
 const LeaderBoard: React.FC = () => {
   const leaderboardData: LeaderboardItem[] = [
