@@ -1,4 +1,3 @@
-
 "use client";
 
 export default function page() {
@@ -21,7 +20,7 @@ export default function page() {
 
       {/* Footer / Info */}
       <p className="mt-6 text-gray-300 text-sm">
-        💡 Tip: Use{" "}
+        
         <span className="text-[#ff8906] font-semibold">fullscreen</span> for the
         best experience!
       </p>
