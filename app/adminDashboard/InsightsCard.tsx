@@ -2,7 +2,7 @@
 'use client';
 
 import React from 'react';
-import { InsightItem } from 'app/adminDashboard/types'
+import { InsightItem } from './types'
 
 const InsightsCard: React.FC = () => {
   const insightsData: InsightItem[] = [

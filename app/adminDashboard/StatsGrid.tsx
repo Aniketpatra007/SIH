@@ -1,8 +1,8 @@
-// app/adminDashboard/components/StatsGrid.tsx
+
 'use client';
 
 import React, { useEffect } from 'react';
-import { StatCard } from 'app/adminDashboard/types';
+import { StatCard } from './types';
 
 const StatsGrid: React.FC = () => {
   const statsData: StatCard[] = [

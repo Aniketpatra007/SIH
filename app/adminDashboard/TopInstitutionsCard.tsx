@@ -2,7 +2,7 @@
 'use client';
 
 import React from 'react';
-import { Institution } from 'app/adminDashboard/types';
+import { Institution } from './types';
 
 const TopInstitutionsCard: React.FC = () => {
   const institutionsData: Institution[] = [
