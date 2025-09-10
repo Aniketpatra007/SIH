@@ -1,19 +1,27 @@
-import type { Metadata } from 'next'
-import './globals.css'
 
-export const metadata: Metadata = {
-  title: 'Gaming Dashboard',
-  description: 'Emergency preparedness gaming dashboard',
-}
 
-export default function RootLayout({
+import { Inter } from 'next/font/google';
+import '@/app/globals.css';
+
+const inter = Inter({ subsets: ['latin'] });
+
+export const metadata = {
+  title: 'DisasterEd Pro - Admin Dashboard',
+  description: 'National Disaster Management Authority - Education Division Admin Portal',
+};
+
+
+export default function AdminDashboardLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${inter.className} bg-[#0F0E17] text-white`}>
+        {children}
+      </body>
     </html>
-  )
+  );
 }
+
