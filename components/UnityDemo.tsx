@@ -21,7 +21,7 @@ export default function UnityDemo() {
       {/* Game container */}
       <div className="w-full max-w-6xl aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-[#ff8906] bg-black">
         <iframe
-          src="/unity/WebGLBuild2/index.html"
+          src="/unity/demobuild/index.html"
           title="Unity WebGL"
           className="w-full h-full"
           style={{ border: "none" }}
