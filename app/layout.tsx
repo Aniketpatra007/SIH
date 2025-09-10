@@ -1,4 +1,5 @@
 
+
 import { Inter } from 'next/font/google';
 import '@/app/globals.css';
 
@@ -8,6 +9,7 @@ export const metadata = {
   title: 'DisasterEd Pro',
   description: 'National Disaster Management Authority - Education Division Admin Portal',
 };
+
 
 export default function AdminDashboardLayout({
   children,
@@ -22,3 +24,4 @@ export default function AdminDashboardLayout({
     </html>
   );
 }
+

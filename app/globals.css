@@ -217,6 +217,270 @@ body {
   }
 }
 
+/* @import "tailwindcss"; */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0f0e17;
+  color: #fffffe;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.dashboard {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 20px;
+}
+
+.card {
+  background: #16161e;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid #1f1f2a;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(255, 137, 6, 0.25);
+}
+
+.user-profile {
+  grid-column: 1 / 3;
+  background-color: #1a1a24;
+  color: #fffffe;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #ff8906;
+  color: #0f0e17;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: bold;
+  border: 3px solid #f25f4c;
+}
+
+.user-info h1 {
+  font-size: 28px;
+  margin-bottom: 5px;
+  color: #fffffe;
+}
+
+.user-info p {
+  color: #a7a9be;
+  font-size: 16px;
+}
+
+.card h2 {
+  color: #fffffe;
+  margin-bottom: 20px;
+  font-size: 24px;
+  border-bottom: 2px solid #ff8906;
+  padding-bottom: 10px;
+}
+
+.user-profile h2 {
+  color: #fffffe;
+  border-bottom-color: #ff8906;
+}
+
+.game-history {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.game-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #1e1e2e;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border-left: 4px solid #ff8906;
+}
+
+.game-item:nth-child(even) {
+  background: #2a2a3a;
+  border-left-color: #f25f4c;
+}
+
+.game-name {
+  font-weight: 600;
+  color: #fffffe;
+}
+
+.game-score {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff8906;
+}
+
+.game-date {
+  font-size: 14px;
+  color: #a7a9be;
+}
+
+.high-score {
+  background-color: #e53170;
+  color: #fffffe;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.game-options {
+  display: grid;
+  gap: 15px;
+}
+
+.game-btn {
+  background-color: #ff8906;
+  color: #fffffe;
+  border: none;
+  padding: 20px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.game-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 137, 6, 0.4);
+}
+
+.game-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: left 0.5s;
+}
+
+.game-btn:hover::before {
+  left: 100%;
+}
+
+.contact-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #1e1e2e;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border-left: 4px solid #f25f4c;
+}
+
+.contact-name {
+  font-weight: 600;
+  color: #fffffe;
+}
+
+.contact-relation {
+  font-size: 14px;
+  color: #a7a9be;
+}
+
+.contact-phone {
+  font-weight: bold;
+  color: #ff8906;
+}
+
+.badges-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+}
+
+.badge {
+  text-align: center;
+  padding: 20px 10px;
+  background: #f25f4c;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+  color: #fffffe;
+}
+
+.badge:hover {
+  transform: scale(1.05);
+}
+
+.badge-icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.badge-name {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.badge.silver {
+  background: #ff8906;
+}
+
+.badge.bronze {
+  background: #e53170;
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .user-profile {
+    grid-column: 1;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .badges-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: #1e1e2e;
+  border-radius: 10px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #ff8906;
+  border-radius: 10px;
+
+}
+
 @media (max-width: 768px) {
   .sidebar {
     transform: translateX(-100%);
