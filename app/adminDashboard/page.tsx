@@ -26,7 +26,7 @@ const AdminDashboard = () => {
 
   return (
     <div className="min-h-screen bg-[#0F0E17] text-white">
-      <Sidebar />
+      {/* <Sidebar /> */}
       <div className="ml-[280px] p-8">
         <Header onSearch={handleSearch} />
         <AlertBanner />
