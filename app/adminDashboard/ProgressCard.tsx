@@ -2,7 +2,7 @@
 'use client';
 
 import React from 'react';
-import { ProgressItem } from 'app/adminDashboard/types';
+import { ProgressItem } from './types';
 
 const ProgressCard: React.FC = () => {
   const progressData: ProgressItem[] = [

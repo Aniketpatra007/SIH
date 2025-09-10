@@ -2,7 +2,7 @@
 'use client';
 
 import React from 'react';
-import { NavItem } from 'app/adminDashboard/types';
+import { NavItem } from './types';
 
 const Sidebar: React.FC = () => {
   const navItems: NavItem[] = [
