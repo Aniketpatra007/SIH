@@ -17,7 +17,7 @@ const BadgesSection: React.FC = () => {
       <div className="badges-container">
         {badges.map((badge, index) => (
           <div key={index} className={badge.className}>
-            <div className="badge-icon text-2xl">{badge.icon}</div>
+            <div className="badge-icon text-2xl flex">{badge.icon}</div>
             <div className="badge-name">{badge.name}</div>
           </div>
         ))}

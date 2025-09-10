@@ -47,6 +47,10 @@ export default function LandingPage() {
     router.push('/login');
   };
 
+  const handleUserDashboard = () => {
+    router.push('/userdashboard');
+  };
+
   return (
     <div className="container">
       {/* Navigation */}
@@ -87,7 +91,7 @@ export default function LandingPage() {
           </p>
           
           <div className="button-group justify-center">
-            <button className="primary-button">
+            <button className="primary-button" onClick={handleUserDashboard}>
               Start Learning Today
             </button>
             <button className="secondary-button">
@@ -205,10 +209,10 @@ export default function LandingPage() {
           </p>
           <div className="button-group justify-center">
             <button className="primary-button">
-              Get Started Free
+              Get Started
             </button>
             <button className="secondary-button">
-              Schedule Demo
+              Demo
             </button>
           </div>
         </div>

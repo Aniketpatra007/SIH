@@ -97,7 +97,7 @@ export default function LoginPage() {
   const iconStyle = {
     position: 'absolute' as const,
     left: '0.75rem',
-    top: '2.25rem',
+    top: '2.75rem',
     color: '#a7a9be',
     pointerEvents: 'none' as const
   };
@@ -105,7 +105,7 @@ export default function LoginPage() {
   const passwordToggleStyle = {
     position: 'absolute' as const,
     right: '0.75rem',
-    top: '2.25rem',
+    top: '2.75rem',
     color: '#a7a9be',
     cursor: 'pointer',
     transition: 'color 0.2s'
