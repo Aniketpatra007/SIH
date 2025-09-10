@@ -5,7 +5,7 @@ import '@/app/globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'DisasterEd Pro - Admin Dashboard',
+  title: 'DisasterEd Pro',
   description: 'National Disaster Management Authority - Education Division Admin Portal',
 };
 
