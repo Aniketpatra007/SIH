@@ -62,7 +62,7 @@ export default function LandingPage() {
           </div>
           <div className="nav-buttons">
             <button className="sign-in-button" onClick={handleLogin}>
-              Sign In
+              Login
             </button>
             <button className="sign-up-button" onClick={handleSignUp}>
               Sign Up
