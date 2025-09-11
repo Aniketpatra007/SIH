@@ -17,7 +17,7 @@ const GameSelection: React.FC<GameSelectionProps> = ({
     <div className="card">
       <h2>Choose Your Game</h2>
       <div className="game-options">
-        <button className="game-btn" onClick={() => onPlayGame("flood")}>
+        <button className="game-btn">
           <div
             style={{
               display: "flex",
@@ -32,7 +32,7 @@ const GameSelection: React.FC<GameSelectionProps> = ({
             High Score: {gameData.flood.highScore.toLocaleString()}
           </div>
         </button>
-        <button className="game-btn" onClick={() => onPlayGame("earthquake")}>
+        <button className="game-btn" >
           <div
             style={{
               display: "flex",
@@ -47,7 +47,7 @@ const GameSelection: React.FC<GameSelectionProps> = ({
             High Score: {gameData.earthquake.highScore.toLocaleString()}
           </div>
         </button>
-        <button className="game-btn" onClick={() => onPlayGame("fire")}>
+        <button className="game-btn" >
           <Link href="/unity">
           <div
             style={{
