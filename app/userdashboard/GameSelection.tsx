@@ -6,7 +6,7 @@ import Link from "next/link";
 
 interface GameSelectionProps {
   gameData: GameData;
-  onPlayGame: () => void;
+  onPlayGame: (ameType: keyof GameData) => void;
 }
 
 const GameSelection: React.FC<GameSelectionProps> = ({
