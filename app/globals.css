@@ -526,7 +526,7 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
-}
+} 
 
 .sign-in-button {
   padding: 0.5rem 1.5rem;
@@ -538,7 +538,7 @@ body {
   transition: opacity 0.2s;
 }
 
-.sign-in-button:hover {
+ .sign-in-button:hover {
   opacity: 0.8;
 }
 
@@ -550,7 +550,7 @@ body {
   border: none;
   cursor: pointer;
   transition: opacity 0.2s;
-}
+} 
 
 .sign-up-button:hover {
   opacity: 0.8;
