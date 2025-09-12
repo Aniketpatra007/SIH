@@ -5,6 +5,7 @@ import React from 'react';
 import ProgressCard from './ProgressCard';
 import InsightsCard from './InsightsCard';
 import TopInstitutionsCard from './TopInstitutionsCard';
+import DistrictRanking from './TopRegionsCard';
 
 const AnalyticsGrid: React.FC = () => {
   return (
@@ -18,6 +19,9 @@ const AnalyticsGrid: React.FC = () => {
         </div>
         <div className="analytics-item">
           <TopInstitutionsCard />
+        </div>
+         <div className="analytics-item">
+          <DistrictRanking />
         </div>
       </div>
       
