@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header';
-import AlertBanner from './AlertBanner';
+// import AlertBanner from './AlertBanner';
 import StatsGrid from './StatsGrid';
 import StudentPerformance from './StudentPerformance';
 import TopPerformers from './TopPerformers';
@@ -12,7 +12,7 @@ const AdminDashboard = () => {
     <div className="container">
       <Header />
       <div className="dashboard-content">
-        <AlertBanner />
+        {/* <AlertBanner /> */}
         <StatsGrid />
         <div className="dashboard-grid">
           <StudentPerformance />
