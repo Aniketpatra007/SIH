@@ -54,6 +54,12 @@ export default function SignupPage() {
     color: '#fffffe',
     marginBottom: '0.5rem'
   };
+  const subTitleStyle = {
+    fontSize: '1rem',
+    fontWeight: 'bold',
+    color: '#fffffe',
+    marginBottom: '0.5rem'
+  };
 
   const subtitleStyle = {
     color: '#a7a9be',
@@ -198,6 +204,7 @@ export default function SignupPage() {
             </span>
           </div>
           <h1 style={titleStyle}>Create Account</h1>
+          <h2 style={subTitleStyle}>Student Registration Only</h2>
           <p style={subtitleStyle}>Join us to start your disaster preparedness journey</p>
         </div>
 

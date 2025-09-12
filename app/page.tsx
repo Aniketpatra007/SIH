@@ -24,14 +24,12 @@ export default function LandingPage() {
     {
       icon: <Trophy size={24} />,
       title: "Gamified Experience",
-      description:
-        "Quizzes, challenges, and reward systems that make disaster preparedness training engaging and memorable.",
+      description: "Video games and reward systems that make disaster preparedness training engaging and memorable."
     },
     {
       icon: <Eye size={24} />,
-      title: "Virtual Reality Drills",
-      description:
-        "Safe simulations of earthquakes, floods, and fires that build confidence without real-world risks.",
+      title: "Virtual Drills",
+      description: "Safe, game-like simulations of earthquakes, floods, and fires that build confidence without real-world risks."
     },
     {
       icon: <Users size={24} />,
@@ -103,9 +101,8 @@ export default function LandingPage() {
           </h1>
 
           <p className="hero-subtitle">
-            Interactive modules, gamified learning, and virtual drills that
-            build confidence and ensure faster, coordinated emergency responses
-            tailored to local risks.
+            Interactive modules and gamified learning that build confidence and ensure faster, 
+            coordinated emergency responses tailored to local risks.
           </p>
 
           <div className="button-group justify-center">
