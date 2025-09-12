@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './regionAdminStyles.css';
 interface School {
   name: string;
   type: string;

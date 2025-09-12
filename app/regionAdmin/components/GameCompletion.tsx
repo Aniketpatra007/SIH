@@ -1,4 +1,5 @@
 import React from 'react';
+import './regionAdminStyles.css';
 
 interface GameData {
   name: string;

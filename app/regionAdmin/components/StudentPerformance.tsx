@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-
+import './regionAdminStyles.css';
 interface Student {
   id: number;
   name: string;

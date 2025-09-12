@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './regionAdminStyles.css';
 interface Insight {
   label: string;
   value: string;
