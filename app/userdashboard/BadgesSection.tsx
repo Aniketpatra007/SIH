@@ -16,9 +16,11 @@ const BadgesSection: React.FC = () => {
       <h2>Badges Awarded</h2>
       <div className="badges-container">
         {badges.map((badge, index) => (
-          <div key={index} className={badge.className}>
-            <div className="badge-icon text-2xl flex">{badge.icon}</div>
-            <div className="badge-name">{badge.name}</div>
+          <div key={index} className={`${badge.className} flex flex-col gap-y-3 `}>
+            <>
+              <div className="badge-icon self-center text-2xl flex justify-center items-center">{badge.icon}</div>
+              <div className="badge-name">{badge.name}</div>
+            </>
           </div>
         ))}
       </div>
