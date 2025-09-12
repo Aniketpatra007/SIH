@@ -1,15 +1,11 @@
 "use client";
-export default function UnityDemo() {
+
+import UnityDemo from "@/components/UnityDemo";
+
+export default function page() {
   return (
-    <div>
-      <h1>Unity WebGL Demo in Next.js</h1>
-      <iframe
-        src="/unity/WebGLBuild/index.html"
-        title="Unity WebGL"
-        width="100%"
-        height="600px"
-        style={{ border: "none" }}
-      ></iframe>
-    </div>
+    <>
+      <UnityDemo />
+    </>
   );
 }

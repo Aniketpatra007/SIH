@@ -1,4 +1,4 @@
-// app/adminDashboard/components/StudentPerformance.tsx
+
 'use client';
 
 import React from 'react';

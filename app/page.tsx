@@ -1,14 +1,25 @@
 "use client";
-import React from 'react';
-import { Shield, Users, BookOpen, AlertTriangle, MapPin, Trophy, Eye, MessageSquare } from 'lucide-react';
-import { useRouter } from 'next/navigation';
+import React from "react";
+import {
+  Shield,
+  Users,
+  BookOpen,
+  AlertTriangle,
+  MapPin,
+  Trophy,
+  Eye,
+  MessageSquare,
+} from "lucide-react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function LandingPage() {
   const features = [
     {
       icon: <BookOpen size={24} />,
       title: "Interactive Learning Modules",
-      description: "Region-specific disaster education with engaging digital content tailored to local risks and hazards."
+      description:
+        "Region-specific disaster education with engaging digital content tailored to local risks and hazards.",
     },
     {
       icon: <Trophy size={24} />,
@@ -23,32 +34,35 @@ export default function LandingPage() {
     {
       icon: <Users size={24} />,
       title: "Admin Dashboard",
-      description: "Comprehensive monitoring of preparedness scores, drill participation, and institutional readiness metrics."
+      description:
+        "Comprehensive monitoring of preparedness scores, drill participation, and institutional readiness metrics.",
     },
     {
       icon: <MessageSquare size={24} />,
       title: "Emergency Communication",
-      description: "Quick access to emergency contacts and real-time alert systems for coordinated responses."
+      description:
+        "Quick access to emergency contacts and real-time alert systems for coordinated responses.",
     },
     {
       icon: <MapPin size={24} />,
       title: "Localized Awareness",
-      description: "Curriculum-integrated guidelines specific to regional disaster patterns and local emergency protocols."
-    }
+      description:
+        "Curriculum-integrated guidelines specific to regional disaster patterns and local emergency protocols.",
+    },
   ];
 
   const router = useRouter();
-  
+
   const handleSignUp = () => {
-    router.push('/signup');
+    router.push("/signup");
   };
-  
+
   const handleLogin = () => {
-    router.push('/login');
+    router.push("/login");
   };
 
   const handleUserDashboard = () => {
-    router.push('/userdashboard');
+    router.push("/userdashboard");
   };
 
   return (
@@ -79,24 +93,23 @@ export default function LandingPage() {
               <AlertTriangle size={64} color="#ff8906" />
             </div>
           </div>
-          
+
           <h1 className="hero-title">
-            Transform Disaster<br />
-            <span style={{ color: '#ff8906' }}>Preparedness Education</span>
+            Transform Disaster
+            <br />
+            <span style={{ color: "#ff8906" }}>Preparedness Education</span>
           </h1>
-          
+
           <p className="hero-subtitle">
             Interactive modules and gamified learning that build confidence and ensure faster, 
             coordinated emergency responses tailored to local risks.
           </p>
-          
+
           <div className="button-group justify-center">
             <button className="primary-button" onClick={handleUserDashboard}>
               Start Learning Today
             </button>
-            <button className="secondary-button">
-              View Demo
-            </button>
+            <button className="secondary-button">View Demo</button>
           </div>
         </div>
       </section>
@@ -104,14 +117,14 @@ export default function LandingPage() {
       {/* Problem Statement */}
       <section className="problem-section">
         <div className="problem-container">
-          <h2 className="section-title">
-            The Challenge We&apos;re Solving
-          </h2>
+          <h2 className="section-title">The Challenge We&apos;re Solving</h2>
           <p className="section-text">
-            Traditional disaster preparedness training relies on infrequent manual drills and generic guidelines. 
-            When real emergencies strike, panic takes over, responses are uncoordinated, and precious time is lost. 
-            Educational institutions need a modern, engaging approach that builds genuine preparedness through 
-            continuous learning and practice.
+            Traditional disaster preparedness training relies on infrequent
+            manual drills and generic guidelines. When real emergencies strike,
+            panic takes over, responses are uncoordinated, and precious time is
+            lost. Educational institutions need a modern, engaging approach that
+            builds genuine preparedness through continuous learning and
+            practice.
           </p>
         </div>
       </section>
@@ -120,27 +133,19 @@ export default function LandingPage() {
       <section className="features-section">
         <div className="features-container">
           <div className="features-header">
-            <h2 className="section-title">
-              Our Solution
-            </h2>
+            <h2 className="section-title">Our Solution</h2>
             <p className="features-header-text">
-              A comprehensive digital platform that makes disaster preparedness engaging, 
-              measurable, and effective through innovative technology.
+              A comprehensive digital platform that makes disaster preparedness
+              engaging, measurable, and effective through innovative technology.
             </p>
           </div>
-          
+
           <div className="features-grid">
             {features.map((feature, index) => (
               <div key={index} className="feature-card">
-                <div className="feature-icon">
-                  {feature.icon}
-                </div>
-                <h3 className="feature-title">
-                  {feature.title}
-                </h3>
-                <p className="feature-desc">
-                  {feature.description}
-                </p>
+                <div className="feature-icon">{feature.icon}</div>
+                <h3 className="feature-title">{feature.title}</h3>
+                <p className="feature-desc">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -155,9 +160,11 @@ export default function LandingPage() {
               Innovation That Makes a Difference
             </h2>
             <p className="innovation-text">
-              Unlike traditional manual drills, our platform integrates gamification, localized awareness, 
-              and data-driven dashboards into a unified system. We make disaster training engaging, 
-              scalable, and measurable—building safer, more resilient educational institutions.
+              Unlike traditional manual drills, our platform integrates
+              gamification, localized awareness, and data-driven dashboards into
+              a unified system. We make disaster training engaging, scalable,
+              and measurable—building safer, more resilient educational
+              institutions.
             </p>
             <ul className="benefits-list">
               <li className="benefit-item">
@@ -200,20 +207,17 @@ export default function LandingPage() {
       {/* CTA Section */}
       <section className="cta-section">
         <div className="cta-container">
-          <h2 className="cta-title">
-            Ready to Build Safer Institutions?
-          </h2>
+          <h2 className="cta-title">Ready to Build Safer Institutions?</h2>
           <p className="cta-text">
-            Join educational institutions worldwide in transforming disaster preparedness 
-            through innovative, engaging digital learning experiences.
+            Join educational institutions worldwide in transforming disaster
+            preparedness through innovative, engaging digital learning
+            experiences.
           </p>
           <div className="button-group justify-center">
             <button className="primary-button">
-              Get Started
+              <Link href="/userdashboard">Get Started</Link>
             </button>
-            <button className="secondary-button">
-              Demo
-            </button>
+            <button className="secondary-button">Demo</button>
           </div>
         </div>
       </section>
@@ -223,7 +227,7 @@ export default function LandingPage() {
         <div className="footer-content">
           <div className="footer-logo">
             <Shield size={24} color="#ff8906" />
-            <span style={{ fontWeight: '600', color: '#fffffe' }}>
+            <span style={{ fontWeight: "600", color: "#fffffe" }}>
               DisasterEd
             </span>
           </div>

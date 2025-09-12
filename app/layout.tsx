@@ -16,7 +16,7 @@ export default function AdminDashboardLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-[#0F0E17] text-white`}>
+      <body className={`${inter.className} bg-[#0F0E17] text-white flex justify-center`}>
         {children}
       </body>
     </html>
