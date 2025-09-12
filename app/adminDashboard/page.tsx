@@ -8,7 +8,7 @@ import Header from './Header';
 import StatsGrid from './StatsGrid';
 import DashboardGrid from './DashboardGrid';
 import AnalyticsGrid from './AnalyticsGrid';
-import AlertBanner from './AlertBanner';
+//import AlertBanner from './AlertBanner';
 
 
 const AdminDashboard = () => {
@@ -30,7 +30,7 @@ const AdminDashboard = () => {
       {/* <Sidebar /> */}
       <div className="ml-[280px] p-8">
         <Header onSearch={handleSearch} />
-        <AlertBanner />
+         {/* <AlertBanner />  */}
         <StatsGrid />
         <DashboardGrid 
           activeFilter={activeFilter} 
