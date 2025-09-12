@@ -1,4 +1,4 @@
-// app/adminDashboard/components/ProgressCard.tsx
+
 'use client';
 
 import React from 'react';

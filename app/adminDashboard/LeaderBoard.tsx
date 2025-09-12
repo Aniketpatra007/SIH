@@ -1,4 +1,4 @@
-// app/adminDashboard/components/LeaderBoard.tsx
+
 'use client';
 
 import React from 'react';
