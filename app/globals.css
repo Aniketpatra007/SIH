@@ -1,8 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
+@import "tailwindcss";
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +11,6 @@ body {
   padding: 20px;
   min-height: 100vh;
   line-height: 1.6;
-  padding: 20px;
 }
 
 /* Scrollbar Styling */
@@ -222,6 +217,7 @@ body {
 
 .dashboard {
   max-width: 1400px;
+  min-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -429,8 +425,6 @@ body {
 
 .badge-icon {
   font-size: 30px;
-  margin-left: 50px;
-  margin-bottom: 10px;
 }
 
 .badge-name {
