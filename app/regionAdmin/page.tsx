@@ -1,5 +1,5 @@
 import React from 'react';
-import AlertBanner from './components/AlertBanner';
+//import AlertBanner from './components/AlertBanner';
 import RegionalStats from './components/RegionalStats';
 import StudentPerformance from './components/StudentPerformance';
 import TopPerformers from './components/TopPerformers';
@@ -29,7 +29,7 @@ export default function RegionalAdminPage() {
       {/* Main Dashboard Content */}
       <div className="regional-dashboard-container">
         {/* Alert Banner */}
-        <AlertBanner />
+        {/* <AlertBanner /> */}
 
         {/* Regional Stats */}
         <RegionalStats />
