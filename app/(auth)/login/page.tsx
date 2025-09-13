@@ -2,14 +2,75 @@
 
 import React, { useState } from 'react';
 import { Shield, Eye, EyeOff, Mail, Lock } from 'lucide-react';
+import toast from 'react-hot-toast';
+import { useRouter } from 'next/navigation';
+import { useUser } from '@/context/authContext';
+import { login } from '@/lib/api';
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
+  const { setAccountID, setAuthToken, setRole ,role} = useUser();
+  
+    const router = useRouter();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
     rememberMe: false
   });
+
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // 1. Basic checks
+    if ( !formData.email || !formData.password) {
+      toast.error("All fields are required");
+      return;
+    }
+    
+
+    try {
+      // 2. Call backend signup API
+      
+
+      const loginRes = await login({
+        email: formData.email,
+        password: formData.password
+      })
+      console.log(loginRes)
+
+      // 3. Save in context
+      setAccountID(loginRes.data.accountId);
+      setAuthToken(loginRes.data.accessToken);
+      setRole(loginRes.data.role); 
+
+      toast.success(`Login successfully as ${role}`)
+      
+
+      router.push("/")
+    } catch (err: any) {
+        const backendError = err.response?.data;
+
+        if (backendError?.message === "Validation failed" && Array.isArray(backendError.data)) {
+          backendError.data.forEach((e: any) => {
+            toast.error(`${e.path}: ${e.message}`);
+          });
+        } else {
+          toast.error(backendError?.message || "Something went wrong");
+        }
+    }
+  };
+
+
+  
+  
+
+
+
+
+
+
+  // ==========================================================================
 
   const containerStyle = {
     minHeight: '100vh',
@@ -209,10 +270,7 @@ export default function LoginPage() {
     });
   };
 
-  const handleSubmit = () => {
-    console.log('Login attempt:', formData);
-    // Handle login logic here
-  };
+ 
 
   return (
     <div style={containerStyle}>
