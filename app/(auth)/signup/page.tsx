@@ -42,11 +42,11 @@ export default function SignupPage() {
         password: formData.password,
       });
 
-      const loginRes = await login({
-        email: formData.email,
-        password: formData.password
-      })
-      console.log(loginRes)
+      // const loginRes = await login({
+      //   email: formData.email,
+      //   password: formData.password
+      // })
+   
 
       // 3. Save in context
       setAccountID(res.accountId);
@@ -58,7 +58,7 @@ export default function SignupPage() {
       console.log("Signup success:", res.data.role);
       alert("Signup successful!");
 
-      router.push("/")
+      router.push("/login")
     } catch (err: any) {
         const backendError = err.response?.data;
 
