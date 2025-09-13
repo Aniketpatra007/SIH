@@ -9,7 +9,8 @@ import Header from './Header';
 import StatsGrid from './StatsGrid';
 import DashboardGrid from './DashboardGrid';
 import AnalyticsGrid from './AnalyticsGrid';
-import AlertBanner from './AlertBanner';
+//import AlertBanner from './AlertBanner';
+
 import RoleGuard from "@/context/roleContext";
 
 const AdminDashboard = () => {
@@ -72,19 +73,19 @@ const AdminDashboard = () => {
         {/* Sidebar */}
         <Sidebar isOpen={sidebarOpen} onClose={closeSidebar} />
 
-        {/* Main Content */}
-        <div className="main-content">
-          <Header onSearch={handleSearch} />
-          <AlertBanner />
-          <StatsGrid />
-          <DashboardGrid
-            activeFilter={activeFilter}
-            onFilterChange={handleFilterChange}
-          />
-          <AnalyticsGrid />
-        </div>
+      {/* Main Content */}
+      <div className="main-content">
+        <Header onSearch={handleSearch} />
+         {/* <AlertBanner />  */}
+        <StatsGrid />
+        <DashboardGrid
+          activeFilter={activeFilter}
+          onFilterChange={handleFilterChange}
+        />
+        <AnalyticsGrid />
       </div>
-    </RoleGuard>
+
+    </div>
   );
 };
 

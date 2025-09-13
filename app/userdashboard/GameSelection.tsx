@@ -18,6 +18,7 @@ const GameSelection: React.FC<GameSelectionProps> = ({
       <h2>Choose Your Game</h2>
       <div className="game-options">
         <button className="game-btn">
+        <Link href="/flood">
           <div
             style={{
               display: "flex",
@@ -31,6 +32,7 @@ const GameSelection: React.FC<GameSelectionProps> = ({
           <div style={{ fontSize: "14px", opacity: "0.8", marginTop: "5px" }}>
             High Score: {gameData.flood.highScore.toLocaleString()}
           </div>
+          </Link>
         </button>
         <button className="game-btn" >
           <div
