@@ -10,10 +10,11 @@ import StatsGrid from './StatsGrid';
 import DashboardGrid from './DashboardGrid';
 import AnalyticsGrid from './AnalyticsGrid';
 import AlertBanner from './AlertBanner';
+import RoleGuard from "@/context/roleContext";
 
 const AdminDashboard = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [activeFilter, setActiveFilter] = useState<FilterRegion>('all');
+  const [searchQuery, setSearchQuery] = useState("");
+  const [activeFilter, setActiveFilter] = useState<FilterRegion>("all");
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -28,18 +29,18 @@ const AdminDashboard = () => {
     };
 
     checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
-    return () => window.removeEventListener('resize', checkScreenSize);
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);
-    console.log('Searching for:', query);
+    console.log("Searching for:", query);
   };
 
   const handleFilterChange = (filter: string) => {
     setActiveFilter(filter as FilterRegion);
-    console.log('Filtering by region:', filter);
+    console.log("Filtering by region:", filter);
   };
 
   const toggleSidebar = () => {
@@ -51,38 +52,39 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0F0E17] text-white">
-      {/* Hamburger Menu Button - Only visible on mobile */}
-      {isMobile && (
-        <button
-          className={`hamburger-menu ${sidebarOpen ? 'active' : ''}`}
-          onClick={toggleSidebar}
-          aria-label="Toggle menu"
-        >
-          <div className="hamburger-icon">
-            <span className="hamburger-line"></span>
-            <span className="hamburger-line"></span>
-            <span className="hamburger-line"></span>
-          </div>
-        </button>
-      )}
+    <RoleGuard allowed={["SUPERADMIN"]}>
+      <div className="min-h-screen bg-[#0F0E17] text-white">
+        {/* Hamburger Menu Button - Only visible on mobile */}
+        {isMobile && (
+          <button
+            className={`hamburger-menu ${sidebarOpen ? "active" : ""}`}
+            onClick={toggleSidebar}
+            aria-label="Toggle menu"
+          >
+            <div className="hamburger-icon">
+              <span className="hamburger-line"></span>
+              <span className="hamburger-line"></span>
+              <span className="hamburger-line"></span>
+            </div>
+          </button>
+        )}
 
-      {/* Sidebar */}
-      <Sidebar isOpen={sidebarOpen} onClose={closeSidebar} />
+        {/* Sidebar */}
+        <Sidebar isOpen={sidebarOpen} onClose={closeSidebar} />
 
-      {/* Main Content */}
-      <div className="main-content">
-        <Header onSearch={handleSearch} />
-        <AlertBanner />
-        <StatsGrid />
-        <DashboardGrid
-          activeFilter={activeFilter}
-          onFilterChange={handleFilterChange}
-        />
-        <AnalyticsGrid />
+        {/* Main Content */}
+        <div className="main-content">
+          <Header onSearch={handleSearch} />
+          <AlertBanner />
+          <StatsGrid />
+          <DashboardGrid
+            activeFilter={activeFilter}
+            onFilterChange={handleFilterChange}
+          />
+          <AnalyticsGrid />
+        </div>
       </div>
-
-    </div>
+    </RoleGuard>
   );
 };
 
