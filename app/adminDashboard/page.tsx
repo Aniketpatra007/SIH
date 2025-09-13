@@ -9,7 +9,8 @@ import Header from './Header';
 import StatsGrid from './StatsGrid';
 import DashboardGrid from './DashboardGrid';
 import AnalyticsGrid from './AnalyticsGrid';
-import AlertBanner from './AlertBanner';
+//import AlertBanner from './AlertBanner';
+
 
 const AdminDashboard = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -73,7 +74,7 @@ const AdminDashboard = () => {
       {/* Main Content */}
       <div className="main-content">
         <Header onSearch={handleSearch} />
-        <AlertBanner />
+         {/* <AlertBanner />  */}
         <StatsGrid />
         <DashboardGrid
           activeFilter={activeFilter}
