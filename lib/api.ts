@@ -36,6 +36,7 @@ export const addRegionalAdmin = async (data: {
   const res = await api.post("/admin/addRegionalAdmin", data);
   return res.data;
 };
+
 export const addSchoolAdmin = async (data: {
   email: string;
   schoolName: string;
