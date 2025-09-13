@@ -29,3 +29,18 @@ export const logoutAPI = async () => {
 };
 
 
+export const addRegionalAdmin = async (data: {
+  email: string;
+  regionName: string;
+}) => {
+  const res = await api.post("/admin/addRegionalAdmin", data);
+  return res.data;
+};
+export const addSchoolAdmin = async (data: {
+  email: string;
+  schoolName: string;
+}) => {
+  const res = await api.post("/admin/addSchoolAdmin", data);
+  return res.data;
+};
+
