@@ -18,3 +18,14 @@ export const login = async (data: {
 };
 
 
+export const me = async () => {
+  const res = await api.get("/auth/me");
+  return res.data;
+};
+
+export const logoutAPI = async () => {
+  const res = await api.get("/auth/logout");
+  return res.data;
+};
+
+

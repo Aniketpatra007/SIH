@@ -6,9 +6,12 @@ import StudentPerformance from './StudentPerformance';
 import TopPerformers from './TopPerformers';
 import GameCompletion from './GameCompletion';
 import KeyInsights from './KeyInsights';
+import RoleGuard from '@/context/roleContext';
 
 const AdminDashboard = () => {
   return (
+    <RoleGuard allowed={["SCHOOLADMIN"]}>
+
     <div className="container">
       <Header />
       <div className="dashboard-content">
@@ -22,6 +25,7 @@ const AdminDashboard = () => {
         </div>
       </div>
     </div>
+    </RoleGuard>
   );
 };
 
