@@ -76,7 +76,7 @@ const AdminDashboard = () => {
       {/* Main Content */}
       <div className="main-content">
         <Header onSearch={handleSearch} />
-         {/* <AlertBanner />  */}
+        {/* <AlertBanner /> */}
         <StatsGrid />
         <DashboardGrid
           activeFilter={activeFilter}
@@ -86,6 +86,7 @@ const AdminDashboard = () => {
       </div>
 
     </div>
+    </RoleGuard>
   );
 };
 
