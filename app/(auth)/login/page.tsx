@@ -37,14 +37,13 @@ export default function LoginPage() {
         email: formData.email,
         password: formData.password
       })
-      console.log(loginRes)
 
       // 3. Save in context
       setAccountID(loginRes.data.accountId);
       setAuthToken(loginRes.data.accessToken);
       setRole(loginRes.data.role); 
 
-      toast.success(`Login successfully as ${role}`)
+      toast.success(`Login successfully as ${loginRes.data.role}`)
       
 
       router.push("/")
