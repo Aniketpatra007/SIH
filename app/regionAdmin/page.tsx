@@ -7,6 +7,7 @@ import GameCompletion from './components/GameCompletion';
 import KeyInsights from './components/KeyInsights';
 import TopSchools from './components/TopSchools';
 import RoleGuard from "@/context/roleContext";
+import AddSchoolAdmin from './components/AddSchoolAdmin';
 
 export default function RegionalAdminPage() {
   return (
@@ -25,6 +26,10 @@ export default function RegionalAdminPage() {
             <button className="sign-in-button">Settings</button>
             <button className="sign-up-button">Profile</button>
             </div> */}
+
+            <div>
+              <AddSchoolAdmin/>
+            </div>
           </div>
         </nav>
 

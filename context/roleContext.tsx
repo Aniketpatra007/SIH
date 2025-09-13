@@ -40,7 +40,7 @@ export default function RoleGuard({ children, allowed }: RoleGuardProps) {
   }, [allowed, router]);
 
   if (loading) return <div>Loading...</div>;
-  // if (!authorized) return null;
+  if (!authorized) return null;
 
   return <>{children}</>;
 }
