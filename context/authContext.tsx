@@ -1,4 +1,5 @@
 "use client";
+import { logoutAPI } from "@/lib/api";
 import { createContext, useContext, useState, useEffect } from "react";
 
 type UserContextType = {
@@ -41,11 +42,15 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
     else localStorage.removeItem("role");
   }, [accountID, authToken, role]);
 
-  const logout = () => {
-    setAccountID(null);
-    setAuthToken(null);
-    setRole(null);
-    localStorage.clear();
+  const logout = async () => {
+    try {
+      await logoutAPI();
+    } catch (err) {
+      console.error("Logout failed", err);
+    } finally {
+      setAccountID(null);
+      setRole(null);
+    }
   };
 
   return (
