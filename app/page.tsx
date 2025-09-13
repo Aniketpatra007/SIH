@@ -12,8 +12,13 @@ import {
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { useUser } from "@/context/authContext";
+import toast from "react-hot-toast";
 
 export default function LandingPage() {
+  const { accountID, logout } = useUser();
+  const router = useRouter();
+
   const features = [
     {
       icon: <BookOpen size={24} />,
@@ -24,12 +29,14 @@ export default function LandingPage() {
     {
       icon: <Trophy size={24} />,
       title: "Gamified Experience",
-      description: "Video games and reward systems that make disaster preparedness training engaging and memorable."
+      description:
+        "Video games and reward systems that make disaster preparedness training engaging and memorable.",
     },
     {
       icon: <Eye size={24} />,
       title: "Virtual Drills",
-      description: "Safe, game-like simulations of earthquakes, floods, and fires that build confidence without real-world risks."
+      description:
+        "Safe, game-like simulations of earthquakes, floods, and fires that build confidence without real-world risks.",
     },
     {
       icon: <Users size={24} />,
@@ -51,13 +58,17 @@ export default function LandingPage() {
     },
   ];
 
-  const router = useRouter();
-
   const handleSignUp = () => {
     router.push("/signup");
   };
 
   const handleLogin = () => {
+    router.push("/login");
+  };
+
+  const handleLogout = () => {
+    logout();
+    toast.success("Logged out successfully!");
     router.push("/login");
   };
 
@@ -75,12 +86,23 @@ export default function LandingPage() {
             <h1>DisasterEd</h1>
           </div>
           <div className="nav-buttons">
-            <button className="sign-in-button" onClick={handleLogin}>
-              Login
-            </button>
-            <button className="sign-up-button" onClick={handleSignUp}>
-              Sign Up
-            </button>
+            {!accountID ? (
+              <>
+                <button className="sign-in-button" onClick={handleLogin}>
+                  Login
+                </button>
+                <button className="sign-up-button" onClick={handleSignUp}>
+                  Sign Up
+                </button>
+              </>
+            ) : (
+              <button
+                onClick={handleLogout}
+                className="sign-in-button"
+              >
+                Logout
+              </button>
+            )}
           </div>
         </div>
       </nav>
@@ -101,8 +123,9 @@ export default function LandingPage() {
           </h1>
 
           <p className="hero-subtitle">
-            Interactive modules and gamified learning that build confidence and ensure faster, 
-            coordinated emergency responses tailored to local risks.
+            Interactive modules and gamified learning that build confidence and
+            ensure faster, coordinated emergency responses tailored to local
+            risks.
           </p>
 
           <div className="button-group justify-center">
